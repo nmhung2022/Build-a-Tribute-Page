@@ -1,113 +1,315 @@
-html {
-  font-size: 11px;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: #333;
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5; /* Thiết lập chiều cao giữa các dòng */
-  font-size: 1.6rem; /* rem tham chiếu tỷ lệ so với phần tử gốc HTML: 1 rem = html */
-  margin: 0;
+  height: 100vh;
+  font-family: 'Quicksand', sans-serif;
 }
 
-#title {
-  font-size: 4rem;
-  margin-bottom: 0;
-  color: #ffa400;;
+main {
+  width: 100%;
+  height: 100%;
 }
 
+.page_1,
+.page_3 {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
-@supports(-webkit-background-clip: text){
+.page_1 {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-image: url(https://anhdepfree.com/wp-content/uploads/2019/08/hinh-bac-ho-voi-nhan-dan.jpg);
+  background-position: center 0;
+}
+
+.page_1 .text {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@supports(-webkit-background-clip: text) {
   #title {
     color: transparent;
     background-image: linear-gradient(to right, #ffa400, #00aefd);
     -webkit-background-clip: text;
-  }  
+  }
 }
 
-#main {
-  background: #eee;
-  border-radius: 5px;
-  margin: 30px 8px; /*Top-Bottom, Left-Right*/
-  padding: 15px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  object-fit: cover;
-}
-
-#img-div {
-  background-color: white;
-  padding: 10px;
-  margin: 0;
-  border: 1px solid #eee;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;
-}
-
-#img-caption {
-  margin: 15px 0 5px 0; /*Top Right Bottom Left*/
-}
-
-ul {
-  text-align: left;
-  max-width: 550px;
-  margin: 0 auto; /*Top-Bottom, Left-Right*/
-}
-
-li {
-  margin: 16px 0;
-}
-
-blockquote {
-  font-style: italic;
-  margin-top: 50px;
-  border: 5px solid rgb(63, 198, 211);
-  background-color: azure;
-  padding: 20px;
-  margin: 30px;
-}
-
-#headline {
+.page_1 .text #title {
+  width: 100%;
+  height: 20%;
   text-align: center;
-  margin: 50px 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 50px;
+  padding: 0px 30px;
+
+
+
 }
 
-a {
-  color: #477ca7;
-}
-
-a:visited {
-  color: #74638f;
-}
-
-footer {
+.page_1 .text .description {
   width: 90%;
-  margin: auto;
-  padding: 10px;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: rgba(243, 146, 0, .7);
 }
 
-@media (max-width: 460px) {
-  h1 {
-    font-size: 3.25rem;
-    line-height: 1.2px;
+.page_1 .text .description p {
+  text-align: center;
+  font-size: 1.75em;
+  font-weight: lighter;
+}
+
+
+p::before,
+p::after {
+  color: white;
+  display: inline-block;
+  position: relative;
+}
+
+.page_1 .text .description p::before {
+  content: open-quote;
+  right: 2px;
+}
+
+.page_1 .text .description p::after {
+  content: close-quote;
+  right: -2px;
+}
+
+.page_1 .image {
+  margin: 0 auto;
+  position: relative;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .page_1 .text #title {
+    margin-bottom: 0px;
+    padding: 0px;
   }
 
-  #main {
-    margin: 0;
+  .page_1 .text .description p::before {
+    content: open-quote;
+    right: 6px;
   }
 
-  #title {
-    font-size: 2rem;
+  .page_1 .text .description p::after {
+    content: close-quote;
+    right: -6px;
   }
 }
 
+.page_2 {
+  min-height: 300vh;
+  width: 100%;
+  background-color: #FFF;
+}
+
+.page_2 .tribute-title {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #F39200;
+  font-size: 1.2em;
+}
+
+.page_2 .tribute-title h3 {
+  width: 80%;
+  color: white;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.tribute-info {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tribute-content {
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  padding: 30px 0;
+}
+
+.tribute-content ul {
+  list-style: none;
+}
+
+.tribute-content ul li {
+  padding: 20px;
+  background-color: #F39200;
+  margin-bottom: 20px;
+  border-radius: 20px 0 20px 0;
+  text-align: center;
+}
+
+.tribute-content ul li:last-child {
+  margin-bottom: 0;
+  /*last-child: chọn thành phần cuối cùng trong danh sách..*/
+}
+
+.tribute-content ul li strong {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.tribute-content ul li p {
+  font-size: 1.1em;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .tribute-content::before {
+    content: '';
+    height: 100%;
+    width: 4px;
+    position: absolute;
+    background-color: #D00000;
+    left: 50%;
+    transform: translateX(-50%);
+    /*Xác định một dịch chuyển 2D theo trục X.*/
+  }
+
+  .tribute-content ul li {
+    width: 50%;
+    margin-bottom: 60px;
+  }
+
+  /*Lựa chọn phần tử con là các phần tử lẻ*/
+  .tribute-content ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-50px);
+  }
+
+  .tribute-content ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(50px);
+  }
+
+  .tribute-content ul li::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #D00000;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(208, 0, 0, 0.3);
+  }
+
+  .tribute-content ul li:hover::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #f39200;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(243, 146, 0, 0.3);
+  }
+
+  .tribute-content ul li:nth-child(odd)::after {
+    top: 0;
+    right: -50px;
+    transform: translate(50%, -50%);
+  }
+
+  .tribute-content ul li:nth-child(even)::after {
+    top: 0;
+    left: -50px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.page_3 {
+  background-image: url(http://hoinongdanninhbinh.org.vn/uploads/news/2020_05/1_08593319052020.jpg);
+  background-position: 90% 50%;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.page_3 .quote {
+  width: 80%;
+  z-index: 1;
+  text-align: center;
+}
+
+.page_3 .quote p {
+  color: whitesmoke;
+  font-family: 'Lobster Two', cursive;
+  font-size: 3em;
+}
+
+.page_3 .quote .name {
+  color: #F39200;
+  font-family: 'Lobster Two', cursive;
+  font-size: 3em;
+}
+
+.page_4 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F39200;
+  font-family: 'Lobster Two', cursive;
+}
+
+.page_4 h1 {
+  text-align: center;
+  font-size: 2.5em;
+  width: 70%;
+}
+
+.page_4 h1 a {
+  transition: all 3s;
+  text-decoration: none;
+  color: white;
+}
+
+.page_4 h1 a:hover {
+  text-decoration: underline;
+  color: #AA0000;
+}
